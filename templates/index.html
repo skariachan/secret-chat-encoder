@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secret Chat Encoder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Secret Chat</h1>
+
+    <form method="POST">
+        <textarea name="message" placeholder="Type your message here..."></textarea>
+
+        <div class="buttons">
+            <button name="encode">Encode</button>
+            <button name="decode">Decode</button>
+        </div>
+    </form>
+
+    {% if encoded %}
+        <div class="result">
+            <h3>Encoded Message:</h3>
+            <p>{{ encoded }}</p>
+        </div>
+    {% endif %}
+
+    {% if decoded %}
+        <div class="result">
+            <h3>Decoded Message:</h3>
+            <p>{{ decoded }}</p>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
